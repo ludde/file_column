@@ -1,9 +1,34 @@
+require 'bundler'
+Bundler.setup
+
 task :default => [:test]
 
 PKG_NAME = "file-column"
-PKG_VERSION = "0.3.1"
+PKG_VERSION = "0.3.2"
 
 PKG_DIR = "release/#{PKG_NAME}-#{PKG_VERSION}"
+
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gem|
+    gem.name = PKG_NAME
+    gem.version = PKG_VERSION
+    gem.summary = "#{PKG_NAME}-#{PKG_VERSION}"
+    gem.description = "File column plugin for Rails3"
+    gem.email = "alex.borovsky@gmail.com"
+    gem.homepage = "http://github.com/partizan/file_column"
+    gem.authors = ["Alexander Borovsky"]    
+    gem.post_install_message = <<-EOM
+#{"*"*50}
+
+  Thank you for installing #{gem.summary}
+  
+#{"*"*50}
+EOM
+  end
+rescue LoadError
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
+end
 
 task :clean do
   rm_rf "release"
