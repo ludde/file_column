@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{file-column}
-  s.version = "0.3.2"
+  s.version = "0.3.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Borovsky"]
-  s.date = %q{2010-08-03}
+  s.date = %q{2010-08-14}
   s.description = %q{File column plugin for Rails3}
   s.email = %q{alex.borovsky@gmail.com}
   s.extra_rdoc_files = [
@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
      "TODO"
   ]
   s.files = [
-    "CHANGELOG",
+    ".gitignore",
+     "CHANGELOG",
      "Gemfile",
      "README",
      "Rakefile",
@@ -26,6 +27,7 @@ Gem::Specification.new do |s|
      "init.rb",
      "lib/file_column.rb",
      "lib/file_column_helper.rb",
+     "lib/file_column_module.rb",
      "lib/file_compat.rb",
      "lib/magick_file_column.rb",
      "lib/rails_file_column.rb",
@@ -47,14 +49,14 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/partizan/file_column}
   s.post_install_message = %q{**************************************************
 
-  Thank you for installing file-column-0.3.2
+  Thank you for installing file-column-0.3.3
   
 **************************************************
 }
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{file-column-0.3.2}
+  s.summary = %q{file-column-0.3.3}
   s.test_files = [
     "test/abstract_unit.rb",
      "test/connection.rb",
