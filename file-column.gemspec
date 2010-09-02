@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Borovsky"]
-  s.date = %q{2010-08-14}
+  s.date = %q{2010-09-02}
   s.description = %q{File column plugin for Rails3}
   s.email = %q{alex.borovsky@gmail.com}
   s.extra_rdoc_files = [
