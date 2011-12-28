@@ -623,7 +623,7 @@ module FileColumn # :nodoc:
     # in +DEFAULT_OPTIONS+.
     def file_column(attr, options={})
       options = DEFAULT_OPTIONS.merge(options) if options
-      options[:root_path] ||= Rails.root("public")
+      options[:root_path] ||= Rails.root.join("public")
       
       my_options = FileColumn::init_options(options, 
                                             ActiveSupport::Inflector.underscore(self.name).to_s,
