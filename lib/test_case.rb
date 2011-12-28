@@ -32,9 +32,9 @@ class Test::Unit::TestCase
     uploaded_file(path, content_type, File.basename(path), type)
   end
   
-  # Copies the fixture files from "RAILS_ROOT/test/fixtures/file_column" into
+  # Copies the fixture files from "Rails.root/test/fixtures/file_column" into
   # the temporary storage directory used for testing
-  # ("RAILS_ROOT/test/tmp/file_column"). Call this method in your
+  # ("Rails.root/test/tmp/file_column"). Call this method in your
   # <tt>setup</tt> methods to get the file fixtures (images, for example) into
   # the directory used by file_column in testing.
   #
@@ -70,14 +70,14 @@ class Test::Unit::TestCase
   #    # ...
   #  end
   def setup_fixture_files
-    tmp_path = File.join(RAILS_ROOT, "test", "tmp", "file_column")
-    file_fixtures = Dir.glob File.join(RAILS_ROOT, "test", "fixtures", "file_column", "*")
+    tmp_path = File.join(Rails.root, "test", "tmp", "file_column")
+    file_fixtures = Dir.glob File.join(Rails.root, "test", "fixtures", "file_column", "*")
     
     FileUtils.mkdir_p tmp_path unless File.exists?(tmp_path)
     FileUtils.cp_r file_fixtures, tmp_path
   end
   
-  # Removes the directory "RAILS_ROOT/test/tmp/file_column/" so the files
+  # Removes the directory "Rails.root/test/tmp/file_column/" so the files
   # copied on test startup are removed. Call this in your unit test's +teardown+
   # method.
   #
@@ -89,7 +89,7 @@ class Test::Unit::TestCase
   #    # ...
   #  end
   def teardown_fixture_files
-    FileUtils.rm_rf File.join(RAILS_ROOT, "test", "tmp", "file_column")
+    FileUtils.rm_rf File.join(Rails.root, "test", "tmp", "file_column")
   end
   
   private
@@ -120,5 +120,5 @@ end
 # in tests but rather into the directory "/test/tmp/file_column".
 if RAILS_ENV == "test"
   FileColumn::ClassMethods::DEFAULT_OPTIONS[:root_path] =
-    File.join(RAILS_ROOT, "test", "tmp", "file_column")
+    File.join(Rails.root, "test", "tmp", "file_column")
 end

@@ -3,10 +3,3 @@
 # add the file_column extensions to rails
 
 require 'file_column'
-require 'file_compat'
-require 'file_column_helper'
-require 'validations'
-
-ActiveRecord::Base.send(:include, FileColumn)
-ActionView::Base.send(:include, FileColumnHelper)
-ActiveRecord::Base.send(:include, FileColumn::Validations)
