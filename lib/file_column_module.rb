@@ -602,7 +602,7 @@ module FileColumn # :nodoc:
 
     # default options. You can override these with +file_column+'s +options+ parameter
     DEFAULT_OPTIONS = {
-      :root_path => File.join(Rails.root, "public"),
+      :root_path => nil,
       :web_root => "",
       :mime_extensions => MIME_EXTENSIONS,
       :extensions => EXTENSIONS,
@@ -623,6 +623,7 @@ module FileColumn # :nodoc:
     # in +DEFAULT_OPTIONS+.
     def file_column(attr, options={})
       options = DEFAULT_OPTIONS.merge(options) if options
+      options[:root_path] ||= Rails.root("public")
       
       my_options = FileColumn::init_options(options, 
                                             ActiveSupport::Inflector.underscore(self.name).to_s,
