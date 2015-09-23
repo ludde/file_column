@@ -566,7 +566,6 @@ module FileColumn # :nodoc:
       "image/x-png" => "png",
       "image/jpg" => "jpg",
       "image/png" => "png",
-      "application/x-shockwave-flash" => "swf",
       "application/pdf" => "pdf",
       "application/pgp-signature" => "sig",
       "application/futuresplash" => "spl",
