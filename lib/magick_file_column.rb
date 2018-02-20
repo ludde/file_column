@@ -37,7 +37,7 @@ module FileColumn # :nodoc:
       begin 
         ::Magick 
       rescue NameError
-        require 'RMagick'
+        require 'rmagick'
       end
 
       if version.is_a?(Symbol)
@@ -210,7 +210,7 @@ module FileColumn # :nodoc:
   module MagickExtension
 
     def self.file_column(klass, attr, options) # :nodoc:
-      require 'RMagick'
+      require 'rmagick'
       options[:magick] = process_options(options[:magick],false) if options[:magick]
       if options[:magick][:versions]
         options[:magick][:versions].each_pair do |name, value|

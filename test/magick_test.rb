@@ -1,5 +1,5 @@
 require File.dirname(__FILE__) + '/abstract_unit'
-require 'RMagick'
+require 'rmagick'
 require File.dirname(__FILE__) + '/fixtures/entry'
 
 
